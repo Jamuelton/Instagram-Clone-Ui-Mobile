@@ -1,4 +1,5 @@
 import { Text, View } from "react-native";
+import { Story } from "../story/Story";
 
 export function Container() {
   return (
@@ -7,7 +8,7 @@ export function Container() {
         <Text>Barra cima</Text>
       </View>
       <View>
-        <Text>Story</Text>
+        <Story />
       </View>
       <View>
         <Text>Postagem</Text>
