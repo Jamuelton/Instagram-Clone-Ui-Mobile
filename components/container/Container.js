@@ -2,6 +2,7 @@ import { Text, View, FlatList } from "react-native";
 import { Story } from "../story/Story";
 
 import jamuPhoto from "../../assets/jamuelton.png";
+import { Post } from "../posting/Posting";
 
 export function Container() {
   const data = [
@@ -63,7 +64,7 @@ export function Container() {
         />
       </View>
       <View>
-        <Text>Postagem</Text>
+        <Post />
       </View>
       <View>
         <Text>Barra Baixo</Text>
