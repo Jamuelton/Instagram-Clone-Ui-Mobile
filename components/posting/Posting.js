@@ -41,7 +41,7 @@ export function Post({
       </View>
       <View style={postStyle.likesContainer}>
         <Image source={likedIcon} style={postStyle.likedIcon} />
-        <Text>curtidas</Text>
+        <Text>45 curtidas</Text>
       </View>
       <View style={postStyle.descriptionContainer}>
         <Text style={postStyle.userDescription}>{user}</Text>
