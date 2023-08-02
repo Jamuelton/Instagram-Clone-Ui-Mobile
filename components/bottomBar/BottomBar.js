@@ -4,13 +4,13 @@ import topStyle from "./Style";
 export function TopBar() {
   return (
     <View style={topStyle.container}>
-      <View>
+      <View style={topStyle.cameraView}>
         <Text>camera</Text>
       </View>
-      <View>
+      <View style={topStyle.instagramView}>
         <Text>Instagram</Text>
       </View>
-      <View>
+      <View style={topStyle.iconsView}>
         <Text>Televisao</Text>
         <Text>Enviar</Text>
       </View>

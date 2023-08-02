@@ -2,7 +2,7 @@ import { Text, View, FlatList } from "react-native";
 import { Story } from "../story/Story";
 
 import { Post } from "../posting/Posting";
-import { TopBar } from "../topBar/Story";
+import { TopBar } from "../topBar/TopBar";
 
 export function Container() {
   const dataStories = [
