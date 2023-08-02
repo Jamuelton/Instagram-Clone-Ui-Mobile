@@ -3,6 +3,8 @@ import { Story } from "../story/Story";
 
 import { Post } from "../posting/Posting";
 import { TopBar } from "../topBar/TopBar";
+import { BottomBar } from "../bottomBar/BottomBar";
+import containerStyle from "./Style";
 
 export function Container() {
   const dataStories = [
@@ -107,11 +109,11 @@ export function Container() {
   );
 
   return (
-    <View>
-      <View>
+    <View style={containerStyle.container}>
+      <View style={containerStyle.topView}>
         <TopBar />
       </View>
-      <View>
+      <View style={containerStyle.storyView}>
         <FlatList
           data={dataStories}
           renderItem={({ item }) => <StoryItem image={item.image} />}
@@ -119,7 +121,7 @@ export function Container() {
           horizontal
         />
       </View>
-      <View>
+      <View style={containerStyle.postView}>
         <FlatList
           data={dataPosts}
           renderItem={({ item }) => (
@@ -135,8 +137,8 @@ export function Container() {
           keyExtractor={(item) => item.id}
         />
       </View>
-      <View>
-        <Text>Barra Baixo</Text>
+      <View style={containerStyle.bottomView}>
+        <BottomBar />
       </View>
     </View>
   );

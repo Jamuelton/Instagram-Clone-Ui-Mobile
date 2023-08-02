@@ -1,18 +1,23 @@
 import { Text, View } from "react-native";
-import topStyle from "./Style";
+import bottomStyle from "./Style";
 
-export function TopBar() {
+export function BottomBar() {
   return (
-    <View style={topStyle.container}>
-      <View style={topStyle.cameraView}>
-        <Text>camera</Text>
+    <View style={bottomStyle.container}>
+      <View style={bottomStyle.homeView}>
+        <Text>home</Text>
       </View>
-      <View style={topStyle.instagramView}>
-        <Text>Instagram</Text>
+      <View style={bottomStyle.searchView}>
+        <Text>pesquisar</Text>
       </View>
-      <View style={topStyle.iconsView}>
-        <Text>Televisao</Text>
-        <Text>Enviar</Text>
+      <View style={bottomStyle.newView}>
+        <Text>New</Text>
+      </View>
+      <View style={bottomStyle.notificationView}>
+        <Text>notificação</Text>
+      </View>
+      <View style={bottomStyle.perfilView}>
+        <Text>perfil</Text>
       </View>
     </View>
   );
