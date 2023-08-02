@@ -30,6 +30,11 @@ const bottomStyle = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  likedIcon: {
+    width: 24,
+    height: 24,
+    borderRadius: 100,
+  },
 });
 
 export default bottomStyle;

@@ -1,5 +1,6 @@
 import { Image, Text, View } from "react-native";
 import postStyle from "./Style";
+import { Feather, Ionicons, SimpleLineIcons } from "@expo/vector-icons";
 
 export function Post({
   perfilImage,
@@ -30,12 +31,12 @@ export function Post({
       </View>
       <View style={postStyle.bottomPost}>
         <View style={postStyle.iconsAction}>
-          <Text>Coração</Text>
-          <Text>comentario</Text>
-          <Text>Enviar</Text>
+          <Ionicons name="md-heart-sharp" size={24} color="black" />
+          <Ionicons name="chatbubble-outline" size={24} color="black" />
+          <Feather name="send" size={24} color="black" />
         </View>
         <View style={postStyle.iconsSave}>
-          <Text>Salvar</Text>
+          <SimpleLineIcons name="tag" size={24} color="black" />
         </View>
       </View>
       <View style={postStyle.likesContainer}>
