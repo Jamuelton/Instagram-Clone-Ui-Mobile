@@ -1,11 +1,11 @@
 import { Text, View, FlatList } from "react-native";
 import { Story } from "../story/Story";
 
-import jamuPhoto from "../../assets/jamuelton.png";
 import { Post } from "../posting/Posting";
+import { TopBar } from "../topBar/Story";
 
 export function Container() {
-  const data = [
+  const dataStories = [
     {
       id: 1,
 
@@ -48,23 +48,92 @@ export function Container() {
     },
   ];
 
-  const Item = ({ image }) => <Story imagem={image} />;
+  const dataPosts = [
+    {
+      id: 1,
+      perfilImage: require("../../assets/jamuelton.png"),
+      user: "Jamuelton",
+      local: "Garanhuns",
+      post: require("../../assets/jamuelton.png"),
+      likedIcon: require("../../assets/jamuelton.png"),
+      descripition: "que dia bonito",
+    },
+    {
+      id: 2,
+      perfilImage: require("../../assets/jamuelton.png"),
+      user: "Jamuelton",
+      local: "Garanhuns",
+      post: require("../../assets/jamuelton.png"),
+      likedIcon: require("../../assets/jamuelton.png"),
+      descripition: "que dia bonito",
+    },
+    {
+      id: 3,
+      perfilImage: require("../../assets/jamuelton.png"),
+      user: "Jamuelton",
+      local: "Garanhuns",
+      post: require("../../assets/jamuelton.png"),
+      likedIcon: require("../../assets/jamuelton.png"),
+      descripition: "que dia bonito",
+    },
+    {
+      id: 4,
+      perfilImage: require("../../assets/jamuelton.png"),
+      user: "Jamuelton",
+      local: "Garanhuns",
+      post: require("../../assets/jamuelton.png"),
+      likedIcon: require("../../assets/jamuelton.png"),
+      descripition: "que dia bonito",
+    },
+  ];
+
+  const StoryItem = ({ image }) => <Story imagem={image} />;
+  const PostItem = ({
+    perfilImage,
+    user,
+    local,
+    post,
+    likedIcon,
+    descripition,
+  }) => (
+    <Post
+      perfilImage={perfilImage}
+      user={user}
+      local={local}
+      post={post}
+      likedIcon={likedIcon}
+      descripition={descripition}
+    />
+  );
 
   return (
     <View>
       <View>
-        <Text>Barra cima</Text>
+        <TopBar />
       </View>
       <View>
         <FlatList
-          data={data}
-          renderItem={({ item }) => <Item image={item.image} />}
+          data={dataStories}
+          renderItem={({ item }) => <StoryItem image={item.image} />}
           keyExtractor={(item) => item.id}
           horizontal
         />
       </View>
       <View>
-        <Post />
+        <FlatList
+          data={dataPosts}
+          renderItem={({ item }) => (
+            <PostItem
+              perfilImage={item.perfilImage}
+              user={item.user}
+              local={item.local}
+              post={item.post}
+              likedIcon={item.likedIcon}
+              descripition={item.descripition}
+            />
+          )}
+          keyExtractor={(item) => item.id}
+        />
       </View>
       <View>
         <Text>Barra Baixo</Text>

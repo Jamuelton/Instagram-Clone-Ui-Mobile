@@ -1,20 +1,24 @@
 import { Image, Text, View } from "react-native";
 import postStyle from "./Style";
 
-export function Post({ imagem }) {
+export function Post({
+  perfilImage,
+  user,
+  local,
+  post,
+  likedIcon,
+  descripition,
+}) {
   return (
     <View>
       <View style={postStyle.topPost}>
         <View style={postStyle.userView}>
           <View>
-            <Image
-              source={require("../../assets/jamuelton.png")}
-              style={postStyle.userIcon}
-            />
+            <Image source={perfilImage} style={postStyle.userIcon} />
           </View>
           <View style={postStyle.userName}>
-            <Text style={postStyle.userText}>Usuario</Text>
-            <Text style={postStyle.userLocal}>Local</Text>
+            <Text style={postStyle.userText}>{user}</Text>
+            <Text style={postStyle.userLocal}>{local}</Text>
           </View>
         </View>
         <View style={postStyle.points}>
@@ -22,10 +26,7 @@ export function Post({ imagem }) {
         </View>
       </View>
       <View style={postStyle.postContainer}>
-        <Image
-          source={require("../../assets/jamuelton.png")}
-          style={postStyle.postImage}
-        />
+        <Image source={post} style={postStyle.postImage} />
       </View>
       <View style={postStyle.bottomPost}>
         <View style={postStyle.iconsAction}>
@@ -38,15 +39,12 @@ export function Post({ imagem }) {
         </View>
       </View>
       <View style={postStyle.likesContainer}>
-        <Image
-          source={require("../../assets/jamuelton.png")}
-          style={postStyle.likedIcon}
-        />
+        <Image source={likedIcon} style={postStyle.likedIcon} />
         <Text>curtidas</Text>
       </View>
       <View style={postStyle.descriptionContainer}>
-        <Text style={postStyle.userDescription}>Usuário</Text>
-        <Text style={postStyle.description}>Descrição</Text>
+        <Text style={postStyle.userDescription}>{user}</Text>
+        <Text style={postStyle.description}>{descripition}</Text>
       </View>
     </View>
   );
